@@ -55,8 +55,8 @@ export default function MemberHistory() {
                     const isOverdue = !item.returned && dueDate < today;
 
                     return (
-                      <li key={item.id} className={isOverdue ? "overdue" : ""}>
-                        <span>{book?.title}</span>
+                      <p key={item.id} className={isOverdue ? "overdue" : ""}>
+                        <span>{book?.title} -</span>
                         <span
                           style={{
                             fontSize: "13px",
@@ -71,9 +71,9 @@ export default function MemberHistory() {
                             ? "Returned"
                             : isOverdue
                               ? "Overdue"
-                              : "Active"}{" "}
+                              : "Active"}
                         </span>
-                      </li>
+                      </p>
                     );
                   })}
                 </ul>

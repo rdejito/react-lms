@@ -368,6 +368,7 @@ li.overdue:hover {
   border-radius: 8px;
   overflow-y: scroll;
   max-height: 400px;
+  margin-top: 10px;
 }
 
 .borrow-table th,
@@ -389,6 +390,7 @@ li.overdue:hover {
 .overdue-row {
   color: rgba(201, 70, 70, 0.904);
   font-weight: bold;
+  margin-left: 5px;
 }
 
 /* search input */

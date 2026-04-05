@@ -2,7 +2,7 @@ import Booklist from "./components/Booklist";
 import BorrowedBooks from "./components/BorrowedBooks";
 import MemberHistory from "./components/MemberHistory";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const TABS = [
   { id: "books", label: "Book List", icon: "📚" },
@@ -11,7 +11,13 @@ const TABS = [
 ];
 
 function App() {
-  const [activeTab, setActiveTab] = useState("books");
+  const [activeTab, setActiveTab] = useState(() => {
+    return localStorage.getItem("ACTIVE_TAB") || "books";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("ACTIVE_TAB", activeTab);
+  }, [activeTab]);
 
   return (
     <div className="app-wrapper">
